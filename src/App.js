@@ -9,7 +9,6 @@ import ricolaLogo from './assets/RicolaWorldLogos-02.png';
 import loadingIcon from './assets/loadingIcon.png';
 import './components/landing.css';
 
-
 const query = 
         `query {
             categoriesCollection(limit: 20)
@@ -47,33 +46,25 @@ const query =
         }`
 ;
 
-
 function App() {
   let [data, setData] = useState(null);
 
   let [hide, setHide] = useState("none");
   let [scrollTo, setScrollTo] = useState(true);
 
-
   let [construction, setConstruction] = useState("none");
   let [scrollToUC, setScrollToUC] = useState(true);
   
   const displayCardsSection = () =>{
       setHide("grid");
-      setConstruction("none");
-      
+      setConstruction("none"); 
       setScrollTo(!scrollTo);
   }
-  
   const displayUnderConstruction = () =>{
     setHide("none");
     setConstruction("block");
-
     setScrollToUC(!scrollToUC);
   }
-
-
-
 
   useEffect(() => {
       window
@@ -98,7 +89,6 @@ function App() {
   
   const buttonData = data.categoriesCollection.items;
   const cardsData = data.footstepCollection.items;
-
 
   return (
     <React.Fragment>
